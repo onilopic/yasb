@@ -1,4 +1,6 @@
 {
+   "name" : "onilopic/yasb",
+   "description" : "Yet another symfony blog",
     "license": "MIT",
     "type": "project",
     "minimum-stability": "stable",
