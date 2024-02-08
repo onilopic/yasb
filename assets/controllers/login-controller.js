@@ -16,15 +16,15 @@ export default class extends Controller {
   // /!\ in a real application, the user/password should never be hardcoded /!\
   // but for the demo application, it's very convenient to do so
 
-  prefillJohnUser() {
-    this.usernameTarget.value = 'john_user'
-    this.passwordTarget.value = 'kitten'
-  }
-
-  prefillJaneAdmin() {
-    this.usernameTarget.value = 'jane_admin'
-    this.passwordTarget.value = 'kitten'
-  }
+  // prefillJohnUser() {
+  //   this.usernameTarget.value = 'john_user'
+  //   this.passwordTarget.value = 'kitten'
+  // }
+  //
+  // prefillJaneAdmin() {
+  //   this.usernameTarget.value = 'jane_admin'
+  //   this.passwordTarget.value = 'kitten'
+  // }
 
   togglePasswordInputType() {
     if ('password' === this.passwordTarget.type) {

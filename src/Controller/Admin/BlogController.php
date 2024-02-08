@@ -1,13 +1,6 @@
 <?php
 
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
+declare(strict_types=1);
 
 namespace App\Controller\Admin;
 
@@ -33,9 +26,6 @@ use Symfony\Component\Security\Http\Attribute\IsGranted;
  * purposes. However, in your real Symfony application you should use any of the
  * existing bundles that let you generate ready-to-use backends without effort.
  * See https://symfony.com/bundles
- *
- * @author Ryan Weaver <weaverryan@gmail.com>
- * @author Javier Eguiluz <javier.eguiluz@gmail.com>
  */
 #[Route('/admin/post')]
 #[IsGranted(User::ROLE_ADMIN)]
@@ -56,8 +46,9 @@ final class BlogController extends AbstractController
     #[Route('/', name: 'admin_post_index', methods: ['GET'])]
     public function index(
         #[CurrentUser] User $user,
-        PostRepository $posts,
-    ): Response {
+        PostRepository      $posts,
+    ): Response
+    {
         $authorPosts = $posts->findBy(['author' => $user], ['publishedAt' => 'DESC']);
 
         return $this->render('admin/blog/index.html.twig', ['posts' => $authorPosts]);
@@ -72,17 +63,17 @@ final class BlogController extends AbstractController
      */
     #[Route('/new', name: 'admin_post_new', methods: ['GET', 'POST'])]
     public function new(
-        #[CurrentUser] User $user,
-        Request $request,
+        #[CurrentUser] User    $user,
+        Request                $request,
         EntityManagerInterface $entityManager,
-    ): Response {
+    ): Response
+    {
         $post = new Post();
         $post->setAuthor($user);
 
         // See https://symfony.com/doc/current/form/multiple_buttons.html
         $form = $this->createForm(PostType::class, $post)
-            ->add('saveAndCreateNew', SubmitType::class)
-        ;
+            ->add('saveAndCreateNew', SubmitType::class);
 
         $form->handleRequest($request);
 
