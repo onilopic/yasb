@@ -9,7 +9,7 @@
       ],
       "css": [
         "/build/127.5d22d6da.css",
-        "/build/app.306b8f6d.css"
+        "/build/app.8925ebb1.css"
       ]
     },
     "admin": {
@@ -30,7 +30,7 @@
     "/build/127.5319392d.js": "sha384-PR5GeQ8AHKxzDW2WZ7YQnc4U6cfGjn4mA42tBLb8kls6oBdmv89PuOgLCEEV2eQf",
     "/build/app.8c47f0d5.js": "sha384-KOylv6iDWrHxakNcmD4fL/X3HqFG7ode8XCLCcwRRxEKgA4FCQ/H9w27BuwkqbsU",
     "/build/127.5d22d6da.css": "sha384-Aj2DvjS/WxFSIf9uLVnmH9Dw6pixHWGKWrOnGxgr2eRW82BIPnXYihtUQyUMQmGm",
-    "/build/app.306b8f6d.css": "sha384-yUywGOzLLFo6GHKgEc4McLGVsxoP/zUO0M6AOAaFIxuAIFNY70OEHTYoLvZ5Z6+a",
+    "/build/app.8925ebb1.css": "sha384-fmN34/gzHLZPh0teEywT7cxQ6pZ+Od37dPyIhgoDE12BDloNezSZIo0p7/GH49Sh",
     "/build/673.a8a6034c.js": "sha384-hsruohAAUG973CEl8FPGEzptQtqKi2m4i5/f7AK0WdjVA2HABqo4PDIl5F0ADoI2",
     "/build/admin.2e00d7c6.js": "sha384-YdDZ6+TI8dzJ9EiFd0aE8XviYeBOqUkEs1AL2l+Xxwyr8bU/KuUdxdGefgKpJIYq",
     "/build/admin.fd62a737.css": "sha384-fvoGdQq5TDnWkCaATqeO2OTzoej/gs53cfF+zl4mhBgy0Vf39tFB0tBXaVf/Ijno"
