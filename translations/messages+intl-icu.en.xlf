@@ -367,14 +367,6 @@
                 <source>help.show_code</source>
                 <target><![CDATA[Click on this button to show the source code of the <strong>Controller</strong> and <strong>template</strong> used to render this page.]]></target>
             </trans-unit>
-            <trans-unit id="help.browse_app">
-                <source>help.browse_app</source>
-                <target><![CDATA[Browse the <strong>public section</strong> of the demo application.]]></target>
-            </trans-unit>
-            <trans-unit id="help.browse_admin">
-                <source>help.browse_admin</source>
-                <target><![CDATA[Browse the <strong>admin backend</strong> of the demo application.]]></target>
-            </trans-unit>
             <trans-unit id="help.login_users">
                 <source>help.login_users</source>
                 <target>Try either of the following users</target>
@@ -441,6 +433,10 @@
             <trans-unit id="paginator.current">
                 <source>paginator.current</source>
                 <target>(current)</target>
+            </trans-unit>
+            <trans-unit id="menu.blog">
+                <source>menu.blog</source>
+                <target>Blog</target>
             </trans-unit>
         </body>
     </file>

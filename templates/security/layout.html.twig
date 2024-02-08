@@ -1,0 +1,16 @@
+{#
+   This is the base template used as the application layout which contains the
+   common elements and decorates all the other templates.
+   See https://symfony.com/doc/current/templates.html#template-inheritance-and-layouts
+#}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div id="main" class="col-sm-12">
+            {{ include('default/_flash_messages.html.twig') }}
+
+            {% block main %}{% endblock %}
+        </div>
+    </div>
+{% endblock %}

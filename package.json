@@ -23,6 +23,7 @@
         "sass": "^1.53.0",
         "sass-loader": "^13.2",
         "stimulus": "^2.0.0",
+        "tailwindcss": "^3.4.1",
         "tempusdominus-bootstrap-4": "^5.39.0",
         "typeahead.js": "^0.11.1",
         "webpack": "^5.72",
@@ -36,5 +37,9 @@
         "dev": "encore dev",
         "watch": "encore dev --watch",
         "build": "encore production --progress"
-  }
+    },
+    "dependencies": {
+        "alpinejs": "^3.13.5",
+        "file-loader": "^6.2.0"
+    }
 }

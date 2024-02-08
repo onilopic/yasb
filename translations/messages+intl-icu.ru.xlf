@@ -367,14 +367,6 @@
                 <source>help.show_code</source>
                 <target><![CDATA[Нажмите на эту кнопку для просмотра исходного кода <strong>Контроллера</strong> и <strong>шаблона</strong>, которые использовались для отображения этой страницы.]]></target>
             </trans-unit>
-            <trans-unit id="help.browse_app">
-                <source>help.browse_app</source>
-                <target><![CDATA[Перейти в <strong>публичный раздел</strong> демо приложения.]]></target>
-            </trans-unit>
-            <trans-unit id="help.browse_admin">
-                <source>help.browse_admin</source>
-                <target><![CDATA[Перейти в <strong>панель управления</strong> демо приложения.]]></target>
-            </trans-unit>
             <trans-unit id="help.login_users">
                 <source>help.login_users</source>
                 <target>Используйте любого из следующих пользователей</target>
@@ -441,6 +433,10 @@
             <trans-unit id="paginator.current">
                 <source>paginator.current</source>
                 <target>(текущая)</target>
+            </trans-unit>
+            <trans-unit id="menu.blog">
+                <source>menu.blog</source>
+                <target>Блог</target>
             </trans-unit>
         </body>
     </file>
