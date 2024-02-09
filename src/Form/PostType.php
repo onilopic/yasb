@@ -24,10 +24,6 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 
 /**
  * Defines the form used to create and manipulate blog posts.
- *
- * @author Ryan Weaver <weaverryan@gmail.com>
- * @author Javier Eguiluz <javier.eguiluz@gmail.com>
- * @author Yonel Ceruto <yonelceruto@gmail.com>
  */
 final class PostType extends AbstractType
 {

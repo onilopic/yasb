@@ -344,6 +344,10 @@
                 <source>post.search_no_results</source>
                 <target>Ничего не найдено</target>
             </trans-unit>
+            <trans-unit id="post.slug_unique">
+                <source>post.slug_unique</source>
+                <target>This title was already used in another blog post, but they must be unique.</target>
+            </trans-unit>
             
             <trans-unit id="user.updated_successfully">
                 <source>user.updated_successfully</source>
