@@ -15,6 +15,6 @@ import './js/highlight.js';
 import './js/doclinks.js';
 
 // start the Stimulus application
-import './bootstrap';
+import './stimulus';
 
 import './js/flatpicker';
