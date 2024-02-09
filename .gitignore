@@ -3,7 +3,7 @@
 
 .php-version
 .idea
-public/build
+public/assets
 
 ###> symfony/framework-bundle ###
 /.env.local
