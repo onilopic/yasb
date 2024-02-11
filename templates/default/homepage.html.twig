@@ -44,15 +44,17 @@
             <div class="homepage-sidebar">
                 <div class="homepage-sidebar-top"></div>
                 <div class="homepage-sidebar-content">
-                    {% for post in paginator.results|slice(0, 5) %}
-                        {{ include('homepage/_post.html.twig') }}
-                    {% else %}
-                        <div class="jumbotron">{{ 'post.no_posts_found'|trans }}</div>
+                    <h3>{{ 'home.popular.tags' | trans }}</h3>
+                    {% for tag in popular_tags %}
+                        <a href="{{ path('blog_index', {'tag': tag.name == app.request.query.get('tag') ? null : tag.name}) }}"
+                           class="badge badge-{{ tag.name == app.request.query.get('tag') ? 'success' : 'secondary' }}"
+                        >
+                            <i class="fa fa-tag"></i> {{ tag.name }}
+                        </a>
                     {% endfor %}
                 </div>
                 <div class="homepage-sidebar-bottom"></div>
             </div>
-
         </div>
     </div>
 {% endblock %}

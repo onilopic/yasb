@@ -446,6 +446,10 @@
                 <source>home.information</source>
                 <target>Information</target>
             </trans-unit>
+            <trans-unit id="home.popular.tags">
+                <source>home.popular.tags</source>
+                <target>Popular tags</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

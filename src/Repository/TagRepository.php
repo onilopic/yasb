@@ -1,14 +1,5 @@
 <?php
 
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 namespace App\Repository;
 
 use App\Entity\Tag;
@@ -22,8 +13,6 @@ use Doctrine\Persistence\ManagerRegistry;
  *
  * See https://symfony.com/doc/current/doctrine.html#querying-for-objects-the-repository
  *
- * @author Yonel Ceruto <yonelceruto@gmail.com>
- *
  * @template-extends ServiceEntityRepository<Tag>
  */
 class TagRepository extends ServiceEntityRepository
@@ -31,5 +20,19 @@ class TagRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Tag::class);
+    }
+
+    public function findPopular(int $limit)
+    {
+        $conn = $this->getEntityManager()->getConnection();
+        $sql = '
+select t.name, count(*) as cnt from symfony_demo_post_tag pt 
+    left join symfony_demo_tag t on pt.tag_id = t.id 
+              group by pt.tag_id 
+              order by cnt desc limit :limit';
+        $stmt = $conn->prepare($sql);
+        $stmt->bindValue('limit', $limit);
+        $result = $stmt->executeQuery();
+        return $result->fetchAllAssociative();
     }
 }
