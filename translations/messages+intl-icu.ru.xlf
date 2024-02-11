@@ -442,6 +442,10 @@
                 <source>menu.blog</source>
                 <target>Блог</target>
             </trans-unit>
+            <trans-unit id="home.information">
+                <source>home.information</source>
+                <target>Информация</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

@@ -3,28 +3,56 @@
 {% block body_id 'homepage' %}
 
 {% block body %}
-    <div class="page-header">
-        <h1 class="homepage-title">{{ 'title.homepage'|trans|raw }}</h1>
 
-        <div class="homepage-categories align-content-center align-items-center text-center">
+    <h1 class="homepage-title">{{ 'title.homepage'|trans|raw }}</h1>
 
-            <ul class="list-unstyled flex mb-0">
-                <li><a style="color: orange;"  href="">Linux</a></li>
-                <li><a style="color: dodgerblue;" href="">Docker</a></li>
-                <li><a style="color: lawngreen;" href="">Symfony</a></li>
-                <li><a style="color: rebeccapurple;" href="">Bitrix</a></li>
-            </ul>
-            <hr>
-            <ul class="list-unstyled flex mb-0">
-                <li><a style="color: lightcoral;" href="">Math</a></li>
-                <li><a style="color: darkslateblue;" href="">Phisics</a></li>
-                <li><a style="color: crimson" href="">Japan</a></li>
-                <li><a style="color: rosybrown;" href="">Database</a></li>
-            </ul>
+    <div class="homepage-categories align-content-center align-items-center text-center">
+
+        <ul class="list-unstyled flex mb-0">
+            <li><a style="color: orange;" href="">Linux</a></li>
+            <li><a style="color: dodgerblue;" href="">Docker</a></li>
+            <li><a style="color: lawngreen;" href="">Symfony</a></li>
+            <li><a style="color: rebeccapurple;" href="">Bitrix</a></li>
+        </ul>
+        <hr>
+        <ul class="list-unstyled flex mb-0">
+            <li><a style="color: lightcoral;" href="">Math</a></li>
+            <li><a style="color: darkslateblue;" href="">Phisics</a></li>
+            <li><a style="color: crimson" href="">Japan</a></li>
+            <li><a style="color: rosybrown;" href="">Database</a></li>
+        </ul>
+    </div>
+
+    <div>
+        <img src="{{ asset('assets/images/top-main-illust.png') }}" class="img-fluid" alt="logotip">
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="homepage-posts">
+
+                <h2 class="homepage-posts-header"> {{ 'home.information' | trans }}</h2>
+
+                {% for post in paginator.results %}
+                    {{ include('homepage/_post.html.twig') }}
+                {% else %}
+                    <div class="jumbotron">{{ 'post.no_posts_found'|trans }}</div>
+                {% endfor %}
+            </div>
         </div>
+        <div class="col-md-4">
+            <div class="homepage-sidebar">
+                <div class="homepage-sidebar-top"></div>
+                <div class="homepage-sidebar-content">
+                    {% for post in paginator.results|slice(0, 5) %}
+                        {{ include('homepage/_post.html.twig') }}
+                    {% else %}
+                        <div class="jumbotron">{{ 'post.no_posts_found'|trans }}</div>
+                    {% endfor %}
+                </div>
+                <div class="homepage-sidebar-bottom"></div>
+            </div>
 
-        <div>
-            <img src="{{ asset('assets/images/top-main-illust.png') }}" class="img-fluid" alt="logotip">
         </div>
     </div>
 {% endblock %}
