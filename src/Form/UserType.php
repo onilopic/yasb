@@ -1,14 +1,5 @@
 <?php
 
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 namespace App\Form;
 
 use App\Entity\User;
@@ -20,8 +11,6 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
  * Defines the form used to edit an user.
- *
- * @author Romain Monteil <monteil.romain@gmail.com>
  */
 final class UserType extends AbstractType
 {
@@ -39,18 +28,18 @@ final class UserType extends AbstractType
         $builder
             ->add(
                 'username', TextType::class, [
-                'label' => 'label.username',
-                'disabled' => true,
+                    'label' => 'label.username',
+                    'disabled' => true,
                 ]
             )
             ->add(
                 'fullName', TextType::class, [
-                'label' => 'label.fullname',
+                    'label' => 'label.fullname',
                 ]
             )
             ->add(
                 'email', EmailType::class, [
-                'label' => 'label.email',
+                    'label' => 'label.email',
                 ]
             );
     }
@@ -59,7 +48,7 @@ final class UserType extends AbstractType
     {
         $resolver->setDefaults(
             [
-            'data_class' => User::class,
+                'data_class' => User::class,
             ]
         );
     }

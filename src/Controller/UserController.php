@@ -1,14 +1,5 @@
 <?php
 
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 namespace App\Controller;
 
 use App\Entity\User;
@@ -28,8 +19,6 @@ use Symfony\Component\Security\Http\Logout\LogoutUrlGenerator;
  * tells Symfony to inject the currently logged user into the given argument.
  * It can only be used in controllers and it's an alternative to the
  * $this->getUser() method, which still works inside controllers.
- *
- * @author Romain Monteil <monteil.romain@gmail.com>
  */
 #[Route('/profile'), IsGranted(User::ROLE_USER)]
 final class UserController extends AbstractController

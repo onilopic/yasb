@@ -1,14 +1,5 @@
 <?php
 
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 namespace App\Entity;
 
 use App\Repository\UserRepository;
@@ -24,9 +15,6 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * Tip: if you have an existing database, you can generate these entity class automatically.
  * See https://symfony.com/doc/current/doctrine/reverse_engineering.html
- *
- * @author Ryan Weaver <weaverryan@gmail.com>
- * @author Javier Eguiluz <javier.eguiluz@gmail.com>
  */
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\Table(name: 'symfony_demo_user')]

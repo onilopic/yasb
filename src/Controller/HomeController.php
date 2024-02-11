@@ -3,16 +3,14 @@
 namespace App\Controller;
 
 use App\Repository\PostRepository;
-use App\Repository\TagRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Attribute\Cache;
 
 class HomeController extends AbstractController
 {
     #[Cache(smaxage: 10)]
-    public function index(Request $request,  PostRepository $posts, TagRepository $tags, string $_format = 'html', int $page = 0): Response
+    public function index(PostRepository $posts, string $_format = 'html', int $page = 0): Response
     {
         $latestPosts = $posts->findLatest($page);
 
