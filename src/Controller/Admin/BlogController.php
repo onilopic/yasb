@@ -47,7 +47,8 @@ final class BlogController extends AbstractController
     public function index(
         #[CurrentUser] User $user,
         PostRepository      $posts,
-    ): Response {
+    ): Response
+    {
         $authorPosts = $posts->findBy(['author' => $user], ['publishedAt' => 'DESC']);
 
         return $this->render('admin/blog/index.html.twig', ['posts' => $authorPosts]);
@@ -65,7 +66,8 @@ final class BlogController extends AbstractController
         #[CurrentUser] User    $user,
         Request                $request,
         EntityManagerInterface $entityManager,
-    ): Response {
+    ): Response
+    {
         $post = new Post();
         $post->setAuthor($user);
 
@@ -89,8 +91,8 @@ final class BlogController extends AbstractController
             $this->addFlash('success', 'post.created_successfully');
 
             /**
- * @var SubmitButton $submit 
-*/
+             * @var SubmitButton $submit
+             */
             $submit = $form->get('saveAndCreateNew');
 
             if ($submit->isClicked()) {
@@ -102,8 +104,8 @@ final class BlogController extends AbstractController
 
         return $this->render(
             'admin/blog/new.html.twig', [
-            'post' => $post,
-            'form' => $form,
+                'post' => $post,
+                'form' => $form,
             ]
         );
     }
@@ -120,7 +122,7 @@ final class BlogController extends AbstractController
 
         return $this->render(
             'admin/blog/show.html.twig', [
-            'post' => $post,
+                'post' => $post,
             ]
         );
     }
@@ -144,8 +146,8 @@ final class BlogController extends AbstractController
 
         return $this->render(
             'admin/blog/edit.html.twig', [
-            'post' => $post,
-            'form' => $form,
+                'post' => $post,
+                'form' => $form,
             ]
         );
     }
@@ -158,8 +160,8 @@ final class BlogController extends AbstractController
     public function delete(Request $request, Post $post, EntityManagerInterface $entityManager): Response
     {
         /**
- * @var string|null $token 
-*/
+         * @var string|null $token
+         */
         $token = $request->request->get('token');
 
         if (!$this->isCsrfTokenValid('delete', $token)) {
