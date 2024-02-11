@@ -45,44 +45,59 @@ final class PostType extends AbstractType
         // $builder->add('title', null, ['required' => false, ...]);
 
         $builder
-            ->add('title', null, [
+            ->add(
+                'title', null, [
                 'attr' => ['autofocus' => true],
                 'label' => 'label.title',
-            ])
-            ->add('summary', TextareaType::class, [
+                ]
+            )
+            ->add(
+                'summary', TextareaType::class, [
                 'help' => 'help.post_summary',
                 'label' => 'label.summary',
-            ])
-            ->add('content', null, [
+                ]
+            )
+            ->add(
+                'content', null, [
                 'attr' => ['rows' => 20],
                 'help' => 'help.post_content',
                 'label' => 'label.content',
-            ])
-            ->add('publishedAt', DateTimePickerType::class, [
+                ]
+            )
+            ->add(
+                'publishedAt', DateTimePickerType::class, [
                 'label' => 'label.published_at',
                 'help' => 'help.post_publication',
-            ])
-            ->add('tags', TagsInputType::class, [
+                ]
+            )
+            ->add(
+                'tags', TagsInputType::class, [
                 'label' => 'label.tags',
                 'required' => false,
-            ])
+                ]
+            )
             // form events let you modify information or fields at different steps
             // of the form handling process.
             // See https://symfony.com/doc/current/form/events.html
-            ->addEventListener(FormEvents::SUBMIT, function (FormEvent $event) {
-                /** @var Post $post */
-                $post = $event->getData();
-                if (null === $post->getSlug() && null !== $post->getTitle()) {
-                    $post->setSlug($this->slugger->slug($post->getTitle())->lower());
+            ->addEventListener(
+                FormEvents::SUBMIT, function (FormEvent $event) {
+                    /**
+                * @var Post $post 
+                */
+                    $post = $event->getData();
+                    if (null === $post->getSlug() && null !== $post->getTitle()) {
+                        $post->setSlug($this->slugger->slug($post->getTitle())->lower());
+                    }
                 }
-            })
-        ;
+            );
     }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
-        $resolver->setDefaults([
+        $resolver->setDefaults(
+            [
             'data_class' => Post::class,
-        ]);
+            ]
+        );
     }
 }

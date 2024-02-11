@@ -79,7 +79,9 @@ final class AppFixtures extends Fixture
             $post->addTag(...$tags);
 
             foreach (range(1, 5) as $i) {
-                /** @var User $commentAuthor */
+                /**
+ * @var User $commentAuthor 
+*/
                 $commentAuthor = $this->getReference('john_user');
 
                 $comment = new Comment();
@@ -138,7 +140,9 @@ final class AppFixtures extends Fixture
         foreach ($this->getPhrases() as $i => $title) {
             // $postData = [$title, $slug, $summary, $content, $publishedAt, $author, $tags, $comments];
 
-            /** @var User $user */
+            /**
+ * @var User $user 
+*/
             $user = $this->getReference(['jane_admin', 'tom_admin'][0 === $i ? 0 : random_int(0, 1)]);
 
             $posts[] = [
@@ -259,11 +263,15 @@ final class AppFixtures extends Fixture
         shuffle($tagNames);
         $selectedTags = \array_slice($tagNames, 0, random_int(2, 4));
 
-        return array_map(function ($tagName) {
-            /** @var Tag $tag */
-            $tag = $this->getReference('tag-'.$tagName);
+        return array_map(
+            function ($tagName) {
+                /**
+            * @var Tag $tag 
+            */
+                $tag = $this->getReference('tag-'.$tagName);
 
-            return $tag;
-        }, $selectedTags);
+                return $tag;
+            }, $selectedTags
+        );
     }
 }

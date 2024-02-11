@@ -57,10 +57,14 @@ final class TagArrayToStringTransformer implements DataTransformerInterface
         $names = array_filter(array_unique($this->trim(u($string)->split(','))));
 
         // Get the current tags and find the new ones that should be created.
-        /** @var Tag[] $tags */
-        $tags = $this->tags->findBy([
+        /**
+ * @var Tag[] $tags 
+*/
+        $tags = $this->tags->findBy(
+            [
             'name' => $names,
-        ]);
+            ]
+        );
         $newNames = array_diff($names, $tags);
         foreach ($newNames as $name) {
             $tags[] = new Tag($name);

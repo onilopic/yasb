@@ -52,17 +52,23 @@ final class Paginator
             ->setMaxResults($this->pageSize)
             ->getQuery();
 
-        /** @var array<string, mixed> $joinDqlParts */
+        /**
+ * @var array<string, mixed> $joinDqlParts 
+*/
         $joinDqlParts = $this->queryBuilder->getDQLPart('join');
 
         if (0 === \count($joinDqlParts)) {
             $query->setHint(CountWalker::HINT_DISTINCT, false);
         }
 
-        /** @var DoctrinePaginator<object> $paginator */
+        /**
+ * @var DoctrinePaginator<object> $paginator 
+*/
         $paginator = new DoctrinePaginator($query, true);
 
-        /** @var array<string, mixed> $havingDqlParts */
+        /**
+ * @var array<string, mixed> $havingDqlParts 
+*/
         $havingDqlParts = $this->queryBuilder->getDQLPart('having');
 
         $useOutputWalkers = \count($havingDqlParts ?: []) > 0;

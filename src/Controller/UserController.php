@@ -51,10 +51,12 @@ final class UserController extends AbstractController
             return $this->redirectToRoute('user_edit', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->render('user/edit.html.twig', [
+        return $this->render(
+            'user/edit.html.twig', [
             'user' => $user,
             'form' => $form,
-        ]);
+            ]
+        );
     }
 
     #[Route('/change-password', name: 'user_change_password', methods: ['GET', 'POST'])]
@@ -73,8 +75,10 @@ final class UserController extends AbstractController
             return $this->redirect($logoutUrlGenerator->getLogoutPath());
         }
 
-        return $this->render('user/change_password.html.twig', [
+        return $this->render(
+            'user/change_password.html.twig', [
             'form' => $form,
-        ]);
+            ]
+        );
     }
 }

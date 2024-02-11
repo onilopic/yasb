@@ -73,7 +73,8 @@ final class SourceCodeExtension extends AbstractExtension
             return '';
         }
 
-        return sprintf('<a href="%s" title="Click to open this file" class="file_link">%s</a> at line %d',
+        return sprintf(
+            '<a href="%s" title="Click to open this file" class="file_link">%s</a> at line %d',
             htmlspecialchars($link, \ENT_COMPAT | \ENT_SUBSTITUTE, $twig->getCharset()),
             htmlspecialchars($text, \ENT_COMPAT | \ENT_SUBSTITUTE, $twig->getCharset()),
             $line,
@@ -82,10 +83,12 @@ final class SourceCodeExtension extends AbstractExtension
 
     public function showSourceCode(Environment $twig, string|TemplateWrapper $template): string
     {
-        return $twig->render('debug/source_code.html.twig', [
+        return $twig->render(
+            'debug/source_code.html.twig', [
             'controller' => $this->getController(),
             'template' => $this->getTemplateSource($twig->resolveTemplate($template)),
-        ]);
+            ]
+        );
     }
 
     /**
@@ -100,7 +103,9 @@ final class SourceCodeExtension extends AbstractExtension
 
         $method = $this->getCallableReflector($this->controller);
 
-        /** @var string $fileName */
+        /**
+ * @var string $fileName 
+*/
         $fileName = $method->getFileName();
 
         if (false === $classCode = file($fileName)) {
@@ -175,15 +180,19 @@ final class SourceCodeExtension extends AbstractExtension
     {
         $codeLines = u($code)->split("\n");
 
-        $indentedOrBlankLines = array_filter($codeLines, static function ($lineOfCode) {
-            return u($lineOfCode)->isEmpty() || u($lineOfCode)->startsWith('    ');
-        });
+        $indentedOrBlankLines = array_filter(
+            $codeLines, static function ($lineOfCode) {
+                return u($lineOfCode)->isEmpty() || u($lineOfCode)->startsWith('    ');
+            }
+        );
 
         $codeIsIndented = \count($indentedOrBlankLines) === \count($codeLines);
         if ($codeIsIndented) {
-            $unindentedLines = array_map(static function ($lineOfCode) {
-                return u($lineOfCode)->after('    ');
-            }, $codeLines);
+            $unindentedLines = array_map(
+                static function ($lineOfCode) {
+                    return u($lineOfCode)->after('    ');
+                }, $codeLines
+            );
             $code = u("\n")->join($unindentedLines)->toString();
         }
 
