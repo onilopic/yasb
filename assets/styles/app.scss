@@ -421,13 +421,13 @@ body#requirements_checker .panel li {
 
 /* Page: 'Homepage'
    ------------------------------------------------------------------------- */
-body#homepage {
+body#homepage h1 {
   text-align: center;
 }
 
 body#homepage .page-header {
   padding-bottom: 9.5px;
-  margin:75px 0 21px;
+  margin-top:75px;
 }
 
 body#homepage .page-header h1 {
@@ -680,4 +680,81 @@ body#blog_search .post-metadata {
 }
 .footer-menu-block {
   height: 280px;
+}
+.homepage-posts-header {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+.homepage-posts-header:after {
+  background: -webkit-gradient(linear, left top, right top, from(#9dc815), to(#00b3de));
+  background: linear-gradient(to right, #9dc815, #00b3de);
+  content: "";
+  position: relative;
+  display: block;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 100%;
+}
+.homepage-posts .post {
+  border-bottom-width: 1px;
+  border-bottom-style: dashed;
+  border-bottom-color: #747474;
+  margin-bottom: 30px;
+}
+
+.homepage-sidebar {
+  margin-top: 50px;
+}
+.homepage-sidebar-top {
+  height: 10px;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  background: -webkit-gradient(linear, left top, right top, from(#6f4899), to(#08acd9));
+  background: linear-gradient(to right, #6f4899, #08acd9);
+  position: relative;
+  z-index: 1;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.homepage-sidebar-top:after {
+  position: absolute;
+  left: 3px;
+  bottom: 0;
+  content: "";
+  background-color: #FFF;
+  height: 7px;
+  width: calc(100% - 6px);
+  border-radius: 7px 7px 0 0;
+  z-index: 2;
+}
+
+.homepage-sidebar-content {
+  border-left: 3px solid #6f4899;
+  border-right: 3px solid #08acd9;
+  padding: 20px;
+  background-color: #FFF;
+}
+.homepage-sidebar-bottom {
+  height: 10px;
+  width: 100%;
+  border-radius: 0 0 10px 10px;
+  background: -webkit-gradient(linear, left top, right top, from(#6f4899), to(#08acd9));
+  background: linear-gradient(to right, #6f4899, #08acd9);
+  position: relative;
+  z-index: 1;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.homepage-sidebar-bottom:after {
+  position: absolute;
+  left: 3px;
+  top: 0;
+  content: "";
+  background-color: #FFF;
+  height: 7px;
+  width: calc(100% - 6px);
+  border-radius: 0 0 7px 7px;
+  z-index: 2;
 }
