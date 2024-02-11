@@ -37,23 +37,30 @@ final class UserType extends AbstractType
         // $builder->add('title', null, ['required' => false, ...]);
 
         $builder
-            ->add('username', TextType::class, [
+            ->add(
+                'username', TextType::class, [
                 'label' => 'label.username',
                 'disabled' => true,
-            ])
-            ->add('fullName', TextType::class, [
+                ]
+            )
+            ->add(
+                'fullName', TextType::class, [
                 'label' => 'label.fullname',
-            ])
-            ->add('email', EmailType::class, [
+                ]
+            )
+            ->add(
+                'email', EmailType::class, [
                 'label' => 'label.email',
-            ])
-        ;
+                ]
+            );
     }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
-        $resolver->setDefaults([
+        $resolver->setDefaults(
+            [
             'data_class' => User::class,
-        ]);
+            ]
+        );
     }
 }

@@ -74,8 +74,7 @@ final class AddUserCommand extends Command
             ->addArgument('password', InputArgument::OPTIONAL, 'The plain password of the new user')
             ->addArgument('email', InputArgument::OPTIONAL, 'The email of the new user')
             ->addArgument('full-name', InputArgument::OPTIONAL, 'The full name of the new user')
-            ->addOption('admin', null, InputOption::VALUE_NONE, 'If set, the user is created as an administrator')
-        ;
+            ->addOption('admin', null, InputOption::VALUE_NONE, 'If set, the user is created as an administrator');
     }
 
     /**
@@ -107,14 +106,16 @@ final class AddUserCommand extends Command
         }
 
         $this->io->title('Add User Command Interactive Wizard');
-        $this->io->text([
+        $this->io->text(
+            [
             'If you prefer to not use this interactive wizard, provide the',
             'arguments required by this command as follows:',
             '',
             ' $ php bin/console app:add-user username password email@example.com',
             '',
             'Now we\'ll ask you for the value of all the missing command arguments.',
-        ]);
+            ]
+        );
 
         // Ask for the username if it's not defined
         $username = $input->getArgument('username');
@@ -126,7 +127,9 @@ final class AddUserCommand extends Command
         }
 
         // Ask for the password if it's not defined
-        /** @var string|null $password */
+        /**
+ * @var string|null $password 
+*/
         $password = $input->getArgument('password');
 
         if (null !== $password) {
@@ -164,16 +167,24 @@ final class AddUserCommand extends Command
         $stopwatch = new Stopwatch();
         $stopwatch->start('add-user-command');
 
-        /** @var string $username */
+        /**
+ * @var string $username 
+*/
         $username = $input->getArgument('username');
 
-        /** @var string $plainPassword */
+        /**
+ * @var string $plainPassword 
+*/
         $plainPassword = $input->getArgument('password');
 
-        /** @var string $email */
+        /**
+ * @var string $email 
+*/
         $email = $input->getArgument('email');
 
-        /** @var string $fullName */
+        /**
+ * @var string $fullName 
+*/
         $fullName = $input->getArgument('full-name');
 
         $isAdmin = $input->getOption('admin');

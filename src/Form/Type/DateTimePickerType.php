@@ -29,7 +29,8 @@ final class DateTimePickerType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         // @see https://symfony.com/doc/current/reference/forms/types/date.html#rendering-a-single-html5-text-box
-        $resolver->setDefaults([
+        $resolver->setDefaults(
+            [
             'widget' => 'single_text',
             // if true, the browser will display the native date picker widget
             // however, this app uses a custom JavaScript widget, so it must be set to false
@@ -45,7 +46,8 @@ final class DateTimePickerType extends AbstractType
             'format' => 'yyyy-MM-dd HH:mm',
             'input_format' => 'Y-m-d H:i',
             'date_format' => 'Y-m-d H:i',
-        ]);
+            ]
+        );
     }
 
     public function getParent(): ?string

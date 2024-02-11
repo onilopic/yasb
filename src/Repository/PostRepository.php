@@ -47,8 +47,7 @@ class PostRepository extends ServiceEntityRepository
             ->leftJoin('p.tags', 't')
             ->where('p.publishedAt <= :now')
             ->orderBy('p.publishedAt', 'DESC')
-            ->setParameter('now', new \DateTime())
-        ;
+            ->setParameter('now', new \DateTime());
 
         if (null !== $tag) {
             $qb->andWhere(':tag MEMBER OF p.tags')
@@ -74,17 +73,17 @@ class PostRepository extends ServiceEntityRepository
         foreach ($searchTerms as $key => $term) {
             $queryBuilder
                 ->orWhere('p.title LIKE :t_'.$key)
-                ->setParameter('t_'.$key, '%'.$term.'%')
-            ;
+                ->setParameter('t_'.$key, '%'.$term.'%');
         }
 
-        /** @var Post[] $result */
+        /**
+ * @var Post[] $result 
+*/
         $result = $queryBuilder
             ->orderBy('p.publishedAt', 'DESC')
             ->setMaxResults($limit)
             ->getQuery()
-            ->getResult()
-        ;
+            ->getResult();
 
         return $result;
     }
@@ -99,8 +98,10 @@ class PostRepository extends ServiceEntityRepository
         $terms = array_unique(u($searchQuery)->replaceMatches('/[[:space:]]+/', ' ')->trim()->split(' '));
 
         // ignore the search terms that are too short
-        return array_filter($terms, static function ($term) {
-            return 2 <= $term->length();
-        });
+        return array_filter(
+            $terms, static function ($term) {
+                return 2 <= $term->length();
+            }
+        );
     }
 }

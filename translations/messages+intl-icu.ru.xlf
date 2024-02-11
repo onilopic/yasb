@@ -58,7 +58,7 @@
 
             <trans-unit id="title.homepage">
                 <source>title.homepage</source>
-                <target><![CDATA[Добро пожаловать в <strong>Symfony Demo</strong> приложение]]></target>
+                <target><![CDATA[Добро пожаловать в <strong>YASB</strong> приложение]]></target>
             </trans-unit>
             <trans-unit id="title.source_code">
                 <source>title.source_code</source>
@@ -343,6 +343,10 @@
             <trans-unit id="post.search_no_results">
                 <source>post.search_no_results</source>
                 <target>Ничего не найдено</target>
+            </trans-unit>
+            <trans-unit id="post.slug_unique">
+                <source>post.slug_unique</source>
+                <target>This title was already used in another blog post, but they must be unique.</target>
             </trans-unit>
             
             <trans-unit id="user.updated_successfully">

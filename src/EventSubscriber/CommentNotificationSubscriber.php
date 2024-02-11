@@ -46,33 +46,42 @@ final class CommentNotificationSubscriber implements EventSubscriberInterface
     {
         $comment = $event->getComment();
 
-        /** @var Post $post */
+        /**
+ * @var Post $post 
+*/
         $post = $comment->getPost();
 
-        /** @var User $author */
+        /**
+ * @var User $author 
+*/
         $author = $post->getAuthor();
 
-        /** @var string $emailAddress */
+        /**
+ * @var string $emailAddress 
+*/
         $emailAddress = $author->getEmail();
 
-        $linkToPost = $this->urlGenerator->generate('blog_post', [
+        $linkToPost = $this->urlGenerator->generate(
+            'blog_post', [
             'slug' => $post->getSlug(),
             '_fragment' => 'comment_'.$comment->getId(),
-        ], UrlGeneratorInterface::ABSOLUTE_URL);
+            ], UrlGeneratorInterface::ABSOLUTE_URL
+        );
 
         $subject = $this->translator->trans('notification.comment_created');
-        $body = $this->translator->trans('notification.comment_created.description', [
+        $body = $this->translator->trans(
+            'notification.comment_created.description', [
             'title' => $post->getTitle(),
             'link' => $linkToPost,
-        ]);
+            ]
+        );
 
         // See https://symfony.com/doc/current/mailer.html
         $email = (new Email())
             ->from($this->sender)
             ->to($emailAddress)
             ->subject($subject)
-            ->html($body)
-        ;
+            ->html($body);
 
         // In config/packages/dev/mailer.yaml the delivery of messages is disabled.
         // That's why in the development environment you won't actually receive any email.
