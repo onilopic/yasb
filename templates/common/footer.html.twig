@@ -1,29 +1,25 @@
 {% block footer %}
     <footer class="page-footer">
         <div class="container">
-            <div class="row">
-                <div id="footer-copyright" class="col-md-3">
-                    <p>&copy; {{ 'now'|date('Y') }} - The YASB Project</p>
-                    <p>{{ 'mit_license'|trans }}</p>
-                </div>
-                <div id="footer-menu" class="col-md-6">
+            <div class="row footer-menu-block" >
+                <div id="footer-menu" class="col-md-8 offset-2">
                     <div class="row">
                         <div class="col-4">
-                            <ul>
+                            <ul class="list-unstyled">
                                 <li>О блоге</li>
                                 <li>О блоге</li>
                                 <li>О блоге</li>
                             </ul>
                         </div>
                         <div class="col-4">
-                            <ul>
+                            <ul class="list-unstyled">
                                 <li>О блоге</li>
                                 <li>О блоге</li>
                                 <li>О блоге</li>
                             </ul>
                         </div>
                         <div class="col-4">
-                            <ul>
+                            <ul class="list-unstyled">
                                 <li>О блоге</li>
                                 <li>О блоге</li>
                                 <li>О блоге</li>
@@ -43,6 +39,11 @@
 {#                            <i class="fa fa-rss" aria-hidden="true"></i>#}
 {#                        </a>#}
 {#                    </p>#}
+                </div>
+            </div>
+            <div class="row">
+                <div id="footer-copyright" class="col">
+                    <p>&copy; {{ 'now'|date('Y') }} - The YASB Project {{ 'mit_license'|trans }}</p>
                 </div>
             </div>
         </div>

@@ -4,9 +4,27 @@
 
 {% block body %}
     <div class="page-header">
-        <h1>{{ 'title.homepage'|trans|raw }}</h1>
+        <h1 class="homepage-title">{{ 'title.homepage'|trans|raw }}</h1>
+
+        <div class="homepage-categories align-content-center align-items-center text-center">
+
+            <ul class="list-unstyled flex mb-0">
+                <li><a style="color: orange;"  href="">Linux</a></li>
+                <li><a style="color: dodgerblue;" href="">Docker</a></li>
+                <li><a style="color: lawngreen;" href="">Symfony</a></li>
+                <li><a style="color: rebeccapurple;" href="">Bitrix</a></li>
+            </ul>
+            <hr>
+            <ul class="list-unstyled flex mb-0">
+                <li><a style="color: lightcoral;" href="">Math</a></li>
+                <li><a style="color: darkslateblue;" href="">Phisics</a></li>
+                <li><a style="color: crimson" href="">Japan</a></li>
+                <li><a style="color: rosybrown;" href="">Database</a></li>
+            </ul>
+        </div>
+
         <div>
-            <img src="{{ asset('assets/images/top-main-illust.png') }}" alt="logotip">
+            <img src="{{ asset('assets/images/top-main-illust.png') }}" class="img-fluid" alt="logotip">
         </div>
     </div>
 {% endblock %}
