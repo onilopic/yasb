@@ -28,7 +28,7 @@ class TagRepository extends ServiceEntityRepository
         $sql = '
 select t.name, count(*) as cnt from symfony_demo_post_tag pt 
     left join symfony_demo_tag t on pt.tag_id = t.id 
-              group by pt.tag_id 
+              group by pt.tag_id, t.name
               order by cnt desc limit :limit';
         $stmt = $conn->prepare($sql);
         $stmt->bindValue('limit', $limit);
