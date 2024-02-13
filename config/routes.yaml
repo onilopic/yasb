@@ -10,6 +10,9 @@ homepage:
     defaults:
         template: default/homepage.html.twig
         _locale: '%locale%'
+    options:
+      breadcrumb:
+        label: Home
 
 controllers:
     resource:

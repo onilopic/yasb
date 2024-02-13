@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b7a8c49a462e3d3ac571d85fcd733577",
+    "content-hash": "709761479b8fd78cd2f1239c977f99dc",
     "packages": [
         {
             "name": "dflydev/dot-access-data",
@@ -2147,6 +2147,63 @@
                 "source": "https://github.com/nette/utils/tree/v4.0.4"
             },
             "time": "2024-01-17T16:50:36+00:00"
+        },
+        {
+            "name": "onilopic/symfony-breadcrumb",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/onilopic/symfony-breadcrumb.git",
+                "reference": "0ddc3265599cc24da89d664a382dfd21c5742d48"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/onilopic/symfony-breadcrumb/zipball/0ddc3265599cc24da89d664a382dfd21c5742d48",
+                "reference": "0ddc3265599cc24da89d664a382dfd21c5742d48",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.0",
+                "symfony/framework-bundle": "6.*|7.*"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.11",
+                "phpunit/phpunit": "^9.5",
+                "twig/twig": "^3.0"
+            },
+            "suggest": {
+                "twig/twig": "To render breadcrumbs with a twig template"
+            },
+            "default-branch": true,
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "v1.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Azri\\BreadcrumbBundle\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bilel Azri",
+                    "email": "azri.bilel@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Symfony bundle for easy setup of breadcrumbs",
+            "support": {
+                "source": "https://github.com/onilopic/symfony-breadcrumb/tree/main"
+            },
+            "time": "2024-02-13T04:33:10+00:00"
         },
         {
             "name": "psr/cache",
@@ -9032,6 +9089,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "onilopic/symfony-breadcrumb": 20,
         "dama/doctrine-test-bundle": 10,
         "doctrine/doctrine-fixtures-bundle": 20
     },

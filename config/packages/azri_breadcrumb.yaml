@@ -1,0 +1,2 @@
+azri_breadcrumb:
+  template: 'common/breadcrumbs/breadcrumbs_bootstrap.html.twig'
