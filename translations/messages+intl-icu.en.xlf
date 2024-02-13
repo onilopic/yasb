@@ -446,9 +446,19 @@
                 <source>home.information</source>
                 <target>Information</target>
             </trans-unit>
+
             <trans-unit id="home.popular.tags">
                 <source>home.popular.tags</source>
                 <target>Popular tags</target>
+            </trans-unit>
+
+            <trans-unit id="footer.link.privacy">
+                <source>footer.link.privacy</source>
+                <target>Privacy</target>
+            </trans-unit>
+            <trans-unit id="footer.link.term_of_use">
+                <source>footer.link.term_of_use</source>
+                <target>Term of use</target>
             </trans-unit>
         </body>
     </file>

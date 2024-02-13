@@ -450,6 +450,16 @@
                 <source>home.popular.tags</source>
                 <target>Популярные теги</target>
             </trans-unit>
+
+            <trans-unit id="footer.link.privacy">
+                <source>footer.link.privacy</source>
+                <target>Политика конфиденциальности</target>
+            </trans-unit>
+
+            <trans-unit id="footer.link.term_of_use">
+                <source>footer.link.term_of_use</source>
+                <target>Правила пользования</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
