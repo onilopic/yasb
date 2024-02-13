@@ -17,7 +17,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * See https://symfony.com/doc/current/doctrine/reverse_engineering.html
  */
 #[ORM\Entity(repositoryClass: UserRepository::class)]
-#[ORM\Table(name: 'symfony_demo_user')]
+#[ORM\Table(name: 'yasb_user')]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     // We can use constants for roles to find usages all over the application rather

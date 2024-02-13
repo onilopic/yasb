@@ -1,30 +1,25 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Controller\Pages;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
-use Symfony\Component\Routing\RouterInterface;
-use WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs;
 
 final class TermsController extends AbstractController
 {
-    #[Route(path:'/terms-of-use', name:'terms-of-use',
+    #[Route(path: '/terms-of-use', name: 'terms_of_use',
         options: [
             'breadcrumb' => [
-                'label' => 'Terms of use',
+                'label' => 'footer.link.term_of_use',
                 'parent_route' => 'homepage'
             ]
         ],
     )]
-    public function index(Breadcrumbs $breadcrumbs, RouterInterface $router): Response
+    public function index(): Response
     {
-        // Simple example
-        $breadcrumbs->addItem("Home", $router->generate("homepage"));
-        // Example without URL
-        $breadcrumbs->addItem("Terms of use");
-
         return $this->render('pages/terms.html.twig', []);
     }
 }

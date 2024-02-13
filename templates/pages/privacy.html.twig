@@ -1,6 +1,23 @@
 {% extends 'base.html.twig' %}
 
 {% block main %}
+    {{ include('common/breadcrumbs/breadcrumbs_bootstrap.html.twig', {
+        'breadcrumbs' : {
+            0 : {
+                'label': 'menu.homepage',
+                'labelParameters': {0:'menu.homepage'},
+                'route': 'homepage',
+                'routeParameters': {}
+            },
+            1 : {
+                'label': 'footer.link.privacy',
+                'labelParameters': {},
+                'route': 'privacy',
+                'routeParameters': {}
+            }
+        }
+    }) }}
+
     <h1>Our Privacy Policy</h1>
     <p>
         Our Privacy Policy was posted on 13 Sep 2012 and last updated on 12 Sep 2021.
