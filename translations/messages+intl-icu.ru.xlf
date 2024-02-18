@@ -460,6 +460,10 @@
                 <source>footer.link.term_of_use</source>
                 <target>Правила пользования</target>
             </trans-unit>
+            <trans-unit id="menu.login">
+                <source>menu.login</source>
+                <target>Авторизация</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

@@ -465,6 +465,10 @@
                 <source>legal.path.name</source>
                 <target>Term of use</target>
             </trans-unit>
+            <trans-unit id="menu.login">
+                <source>menu.login</source>
+                <target>Login</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
